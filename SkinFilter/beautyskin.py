@@ -51,14 +51,14 @@ def detect(filename):
 
 
 if __name__ == "__main__":
-    filename = "./lena512color.tiff"
+    filename = "./data/lena512color.tiff"
     image = cv2.imread(filename, 1) # 读取图像
     image_old = image
 
     face_pos = detect(filename)    # 检测人脸位置
 
     cv2.imshow("original image", image) # 显示原始图像
-    cv2.imwrite("oldimage.jpg", image)
+    cv2.imwrite("original_image.jpg", image)
 
     image_new = bilateral_filter(image_old, 7, 20.0, 20.0, face_pos)
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         image_new = cv2.rectangle(image_new, (x, y), (x+w, y+h), (255, 0, 0), 2)  
 
     cv2.imshow("process image", image_new) # 显示处理后图像
-    cv2.imwrite("newimage.jpg", image_new)
+    cv2.imwrite("process_image.jpg", image_new)
 
     cv2.waitKey()
 
