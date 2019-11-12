@@ -102,8 +102,11 @@ if __name__ == "__main__":
 
     filename = './lena512color.tiff'
     img = cv2.imread(filename)
+    face_pos = detect(filename)     # 检测人脸位置
 
     cv2.imshow("original image", img)
+
+    
     # bilateralFilter(img, 5, 45, 100)
     myBilateralFilter(img, 3, 30, 80)
 
