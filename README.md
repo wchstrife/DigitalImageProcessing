@@ -1,3 +1,4 @@
+﻿
 # 数字图像处理-图像滤镜
 
 ## 一、人像美肤
@@ -43,11 +44,11 @@ $$
 
 输入一张512*512，tiff格式的Lenna图，左边为滤波前效果，右边为滤波后效果。
 
-![](./Skin-Filter/oldimage.jpg)![](./Skin-Filter/newimage.jpg)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117195706760.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117195730514.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)
 
 细节对比:可以观察到只有在框内的区域进行了平滑。
 
-![](./Skin-Filter/compare.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117200652741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70)
 
 ## 二、晶格化效果
 
@@ -76,6 +77,7 @@ SLIC算法采用了K-means的算法思想，对于像素进行聚类，同时为
 用一个label数组记录像素点属于哪个聚类，dist数组记录到像素中心的距离。
 
 对于聚类中心X，计算周围2S范围内的点，使用公式更新dist数组中的最小距离，并且更新其属于哪个聚类。距离公式如下：
+
 $$
 d_c = \sqrt{(l_j - l_i)^2}
 $$
@@ -102,12 +104,16 @@ M = 10-40 ： 颜色空间差异的参数，M越大代表空间相似性起到�
 
 ### 2.4 算法效果
 
-K = 1000, M = 10, 20, 40 时效果如下：
-![](./SLIC-Superpixels/result_K_1000_M10.png)![](./SLIC-Superpixels/result_K_1000_M20.png)![](./SLIC-Superpixels/result_K_1000_M30.png)
+K = 1000, M = 10, 20, 30 时效果如下：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117202624956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117202649614.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117202713833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)
 
 M = 10， K = 1000， 2000， 5000时效果如下：
-![](./SLIC-Superpixels/result_K_1000_M10.png)![](./SLIC-Superpixels/result_K_2000_M10.png)![](./SLIC-Superpixels/result_K_5000_M10.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117202945777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117203001369.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)![在这里插入图片描述](https://img-blog.csdnimg.cn/20191117203019179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3djaHN0cmlmZQ==,size_16,color_FFFFFF,t_70 =240x240)
 
 ### 2.5 参考文献
-[1] Achanta, Radhakrishna, Appu Shaji, Kevin Smith, Aurélien Lucchi, Pascal Fua和Sabine Süsstrunk. 《SLIC Superpixels Compared to State-of-the-art Superpixel Methods》. IEEE Transactions on Pattern Analysis and Machine Intelligence 34, 11 (2012): 8. 2274-2282. https://doi.org/10.1109/TPAMI.2012.120.
+
+[1] Achanta, Radhakrishna, Appu Shaji, Kevin Smith, Aurélien Lucchi, Pascal Fua and Sabine Süsstrunk. SLIC Superpixels Compared to State-of-the-art Superpixel Methods. IEEE Transactions on Pattern Analysis and Machine Intelligence 34, 11 (2012): 8. 2274-2282. https://doi.org/10.1109/TPAMI.2012.120.
+
 
