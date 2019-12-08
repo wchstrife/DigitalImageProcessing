@@ -40,12 +40,15 @@ def my_detector():
     cv2.waitKey(0)
     cv2.destroyAllWindows() 
 
-def whitening(image, rate=0.3):
+def whitening(image, rate=0.15):
     image_HSV = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     image_HSV[:,:,-1] = np.minimum(image_HSV[:,:,-1] +  image_HSV[:,:,-1] * rate, 255).astype('uint8')
     image_RGB =  cv2.cvtColor(image_HSV, cv2.COLOR_HSV2BGR)
 
     return image_RGB
+
+def funcname(parameter_list):
+    pass
 
 def get_skin_mask(image):
     return skin_detector.process(image)
