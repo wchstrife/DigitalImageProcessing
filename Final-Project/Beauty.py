@@ -243,7 +243,7 @@ class Makeup():
 
 
 if __name__ == '__main__':
-	img_path = './data/test.png'
+	img_path = './data/test4.png'
 	Mk = Makeup()
 	img, temp_img, faces = Mk.read_and_mark(img_path)
 	img_copy = img.copy()
@@ -252,25 +252,25 @@ if __name__ == '__main__':
 		for face in faces[img_path]:
 			face.whitening(0.3)
 			face.smooth(0.4)
-			face.organs['forehead'].whitening(0.5)
+			face.organs['forehead'].whitening(0.4)
 			face.organs['mouth'].whitening(0.4)
-			face.organs['left_eye'].whitening(0.5)
-			face.organs['right_eye'].whitening(0.5)
-			face.organs['left_brow'].whitening(0.5)
-			face.organs['right_brow'].whitening(0.5)
+			face.organs['left_eye'].whitening(0.4)
+			face.organs['right_eye'].whitening(0.4)
+			face.organs['left_brow'].whitening(0.4)
+			face.organs['right_brow'].whitening(0.4)
 			face.organs['nose'].whitening(0.6)
 			face.organs['mouth'].brightening(0.1)
 			face.organs['forehead'].smooth(0.7)
 			face.organs['mouth'].smooth(0.2)
 			face.organs['right_eye'].smooth()
 			face.organs['left_eye'].smooth()
-			face.organs['nose'].smooth(1)
+			face.organs['nose'].smooth(0.3)
 			face.organs['mouth'].smooth()
-			face.organs['left_eye'].sharpen(0.3)
-			face.organs['right_eye'].sharpen(0.3)
-			face.organs['left_brow'].sharpen(0.3)
-			face.organs['right_brow'].sharpen(0.3)
-			face.organs['nose'].sharpen(0.4)
+			face.organs['left_eye'].sharpen(0.2)
+			face.organs['right_eye'].sharpen(0.2)
+			face.organs['left_brow'].sharpen(0.2)
+			face.organs['right_brow'].sharpen(0.2)
+			face.organs['nose'].sharpen(0.3)
 			face.sharpen(0.2)
 			
 		cv2.imshow('new', img.copy())

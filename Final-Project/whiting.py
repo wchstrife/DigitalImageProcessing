@@ -55,7 +55,7 @@ def get_skin_mask(image):
 
 
 if __name__ == "__main__":
-    img_path = "./data/0015_01.jpg"
+    img_path = "./data/test3.png"
     image = cv2.imread(img_path)
     
     cv2.imshow("input", image)
